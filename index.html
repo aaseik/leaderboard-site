@@ -1,88 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
-  <title>Fotballauksjon</title>
+<meta charset="UTF-8">
+<title>Fotballauksjon</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0b3c78;
+    color: #fff;
+  }
+
+  .top {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .top a {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #1e90ff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    color: #000;
+    font-size: 14px;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: left;
+  }
+
+  th {
+    background: #e6f0ff;
+    font-weight: 600;
+  }
+
+  td.group {
+    background: #d9e8ff;
+    font-weight: bold;
+    text-align: center;
+    width: 36px;
+  }
+
+  td.bid {
+    text-align: right;
+    font-weight: bold;
+  }
+</style>
 </head>
+
 <body>
 
-<h1>Leaderboard</h1>
+<div class="top">
+  <a href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=RByXkBQjgkOXmxrLrMPMmL8tWnsAJVFBiTBsVlaAMDNUMEVLOFFDWDFQU0RMVk9EMTNRM1VJUUVZWS4u"
+     target="_blank">
+    ➕ Legg inn bud
+  </a>
+</div>
 
-<div id="container"></div>
-
-<br>
-
-<a href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=RByXkBQjgkOXmxrLrMPMmL8tWnsAJVFBiTBsVlaAMDNUMEVLOFFDWDFQU0RMVk9EMTNRM1VJUUVZWS4u" target="_blank">
-  Legg inn bud
-</a>
+<table id="leaderboard">
+  <thead>
+    <tr>
+      <th>Gr</th>
+      <th>Lag</th>
+      <th>Bud</th>
+      <th>Eier</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
 <script>
 async function loadData() {
   const res = await fetch("leaderboard.json");
   const data = await res.json();
 
-  const container = document.getElementById("container");
-  container.innerHTML = "";
+  const tbody = document.querySelector("#leaderboard tbody");
+  tbody.innerHTML = "";
 
-  // group teams by group letter
   const groups = {};
-
   data.forEach(team => {
-    if (!groups[team.group]) {
-      groups[team.group] = [];
-    }
+    if (!groups[team.group]) groups[team.group] = [];
     groups[team.group].push(team);
   });
 
-  // sort groups A → L
   Object.keys(groups).sort().forEach(groupName => {
+    const teams = groups[groupName].sort((a, b) => b.bid - a.bid);
 
-    const groupDiv = document.createElement("div");
-
-    // group header
-    const title = document.createElement("h2");
-    title.innerText = `Gruppe ${groupName}`;
-    groupDiv.appendChild(title);
-
-    // table for this group
-    const table = document.createElement("table");
-    table.border = "1";
-
-    table.innerHTML = `
-      <tr>
-        <th>Gruppe</th>
-        <th>Lag</th>
-        <th>Bud</th>
-        <th>Eier</th>
-      </tr>
-    `;
-
-    // sort teams inside group by bid
-    groups[groupName].sort((a, b) => b.bid - a.bid);
-
-    groups[groupName].forEach(team => {
+    teams.forEach((team, index) => {
       const tr = document.createElement("tr");
 
-      tr.innerHTML = `
-        <td>${team.group}</td>
+      if (index === 0) {
+        const tdGroup = document.createElement("td");
+        tdGroup.className = "group";
+        tdGroup.rowSpan = teams.length;
+        tdGroup.innerText = groupName;
+        tr.appendChild(tdGroup);
+      }
+
+      tr.innerHTML += `
         <td>${team.team}</td>
-        <td>${team.bid}</td>
+        <td class="bid">${team.bid}</td>
         <td>${team.owner}</td>
       `;
 
-      table.appendChild(tr);
+      tbody.appendChild(tr);
     });
-
-    groupDiv.appendChild(table);
-    container.appendChild(groupDiv);
   });
 }
 
-// initial load
 loadData();
-
-// auto refresh every 10 seconds
 setInterval(loadData, 10000);
 </script>
 
 </body>
 </html>
+
