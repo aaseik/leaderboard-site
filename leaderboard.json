@@ -1,0 +1,61 @@
+[
+  { "group": "A", "team": "Mexico", "bid": 1, "owner": "-" },
+  { "group": "A", "team": "Sør-Afrika", "bid": 1, "owner": "-" },
+  { "group": "A", "team": "Sør-Korea", "bid": 1, "owner": "-" },
+  { "group": "A", "team": "Tsjekkia", "bid": 1, "owner": "-" },
+
+  { "group": "B", "team": "Canada", "bid": 1, "owner": "-" },
+  { "group": "B", "team": "Bosnia-Hercegovina", "bid": 1, "owner": "-" },
+  { "group": "B", "team": "Qatar", "bid": 1, "owner": "-" },
+  { "group": "B", "team": "Sveits", "bid": 1, "owner": "-" },
+
+  { "group": "C", "team": "Brasil", "bid": 1, "owner": "-" },
+  { "group": "C", "team": "Marokko", "bid": 1, "owner": "-" },
+  { "group": "C", "team": "Haiti", "bid": 1, "owner": "-" },
+  { "group": "C", "team": "Skottland", "bid": 1, "owner": "-" },
+
+  { "group": "D", "team": "USA", "bid": 1, "owner": "-" },
+  { "group": "D", "team": "Paraguay", "bid": 1, "owner": "-" },
+  { "group": "D", "team": "Australia", "bid": 1, "owner": "-" },
+  { "group": "D", "team": "Tyrkia", "bid": 1, "owner": "-" },
+
+  { "group": "E", "team": "Tyskland", "bid": 1, "owner": "-" },
+  { "group": "E", "team": "Curaçao", "bid": 1, "owner": "-" },
+  { "group": "E", "team": "Elfenbenskysten", "bid": 1, "owner": "-" },
+  { "group": "E", "team": "Ecuador", "bid": 1, "owner": "-" },
+
+  { "group": "F", "team": "Nederland", "bid": 1, "owner": "-" },
+  { "group": "F", "team": "Japan", "bid": 1, "owner": "-" },
+  { "group": "F", "team": "Sverige", "bid": 1, "owner": "-" },
+  { "group": "F", "team": "Tunisia", "bid": 1, "owner": "-" },
+
+  { "group": "G", "team": "Belgia", "bid": 1, "owner": "-" },
+  { "group": "G", "team": "Egypt", "bid": 1, "owner": "-" },
+  { "group": "G", "team": "Iran", "bid": 1, "owner": "-" },
+  { "group": "G", "team": "New Zealand", "bid": 1, "owner": "-" },
+
+  { "group": "H", "team": "Spania", "bid": 1, "owner": "-" },
+  { "group": "H", "team": "Kapp Verde", "bid": 1, "owner": "-" },
+  { "group": "H", "team": "Saudi-Arabia", "bid": 1, "owner": "-" },
+  { "group": "H", "team": "Uruguay", "bid": 1, "owner": "-" },
+
+  { "group": "I", "team": "Frankrike", "bid": 1, "owner": "-" },
+  { "group": "I", "team": "Senegal", "bid": 1, "owner": "-" },
+  { "group": "I", "team": "Irak", "bid": 1, "owner": "-" },
+  { "group": "I", "team": "Norge", "bid": 1, "owner": "-" },
+
+  { "group": "J", "team": "Argentina", "bid": 1, "owner": "-" },
+  { "group": "J", "team": "Algerie", "bid": 1, "owner": "-" },
+  { "group": "J", "team": "Østerrike", "bid": 1, "owner": "-" },
+  { "group": "J", "team": "Jordan", "bid": 1, "owner": "-" },
+
+  { "group": "K", "team": "Portugal", "bid": 1, "owner": "-" },
+  { "group": "K", "team": "DR Kongo", "bid": 1, "owner": "-" },
+  { "group": "K", "team": "Usbekistan", "bid": 1, "owner": "-" },
+  { "group": "K", "team": "Colombia", "bid": 1, "owner": "-" },
+
+  { "group": "L", "team": "England", "bid": 1, "owner": "-" },
+  { "group": "L", "team": "Kroatia", "bid": 1, "owner": "-" },
+  { "group": "L", "team": "Ghana", "bid": 1, "owner": "-" },
+  { "group": "L", "team": "Panama", "bid": 1, "owner": "-" }
+]
