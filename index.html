@@ -74,9 +74,9 @@ th {
     width: 36px;
   }
 
-  td.bid {
+  td.bid, td.owner {
     text-align: center;
-    font-weight: bold;
+    /*font-weight: bold;*/
   }
 </style>
 </head>
@@ -131,9 +131,9 @@ async function loadData() {
       }
 
       tr.innerHTML += `
-        <td>${team.team}</td>
+        <td class="team">${team.team}</td>
         <td class="bid">${team.bid}</td>
-        <td>${team.owner}</td>
+        <td class="owner">${team.owner}</td>
       `;
 
       tbody.appendChild(tr);
