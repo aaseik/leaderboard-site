@@ -104,7 +104,7 @@ th {
 
 <script>
 async function loadData() {
-  const res = await fetch("leaderboard.json");
+  const res = await fetch("https://leaderboarddata123.blob.core.windows.net/public-data/leaderboard.json?ts=" + Date.now());
   const data = await res.json();
 
   const tbody = document.querySelector("#leaderboard tbody");
